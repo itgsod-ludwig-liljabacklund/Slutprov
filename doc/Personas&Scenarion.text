@@ -37,7 +37,9 @@ vad andra tycker om de muster han har provat.
 
 ### Scenarion
 
-1.  Sten är i centrum och i en liten avlägsen butik hittar han en must han inte
+1.  **Bedömning av must**
+
+    Sten är i centrum och i en liten avlägsen butik hittar han en must han inte
     har provat tidigare. Han köper musten och tar en klunk men han inser genast
     att den inte smakar bra alls. Han dricker upp resten av den som en
     principsak men han känner snabbt att han vill dela med sig av sin erfarenhet
@@ -54,7 +56,9 @@ vad andra tycker om de muster han har provat.
     erfarenhet av den. Efter att ha klickat på “Spara” blir han omdirigerad till
     mustens egna sida där han ser sin recension och då är han nöjd.
 
-2.  Sten är ännu än gång ute och vandrar i centrum där han hittar ännu en
+2.  **Hitta recensioner av specifik must**
+
+    Sten är ännu än gång ute och vandrar i centrum där han hittar ännu en
     avlägsen butik med en okänd must. Sten har lärt sig från sin förra
     musterfarenhet och när han nu hittar denna nya must så vill han först kolla
     efter recensioner för den.
@@ -101,7 +105,9 @@ kunder.
 
 ### Scenarion
 
-1.  Bengt bestämmer sig för att hitta en ny mustsort att köpa in till
+1.  **Hitta billig must**
+
+    Bengt bestämmer sig för att hitta en ny mustsort att köpa in till
     butikshyllorna och för att hitta rätt must tänker han använda sig av
     itsamust.se. Han navigerar till sidan och blir bemött av en lista med
     populära muster. Han kollar igen listan men hittar inget som passar hans
@@ -112,7 +118,9 @@ kunder.
     Bengt men en bit ner hittar han en billig must med 3.5 stjärnor vilket är
     nog för honom. Han skriver ner namnet på musten för att komma ihåg det.
 
-2.  Bengt vill nu köpa in musten som han bestämde sig för tidigare. Han
+2.  **Köp av must**
+
+    Bengt vill nu köpa in musten som han bestämde sig för tidigare. Han
     navigerar till itsamust.se och klickar på “Sök” knappen där han i fältet
     skriver in namnet på musten han hittade. Han väljer rätt alternativ och blir
     omdirigerad till mustens sida där han kan se vilka butiker som erbjuder
