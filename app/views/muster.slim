@@ -1,0 +1,20 @@
+table#muster.display
+  thead
+    tr
+      th Namn
+      th Tillverkare
+      th Volym
+      th År
+      th Betyg
+      th Pris
+      th Kr/Cl
+  tbody
+    - for must in @muster
+      tr
+        td #{must.name}
+        td #{must.manufacturer}
+        td #{must.volume}
+        td #{must.year}
+        td 5
+        td #{must.price}
+        td #{(must.price.to_f / must.volume.to_f).round(2)}
