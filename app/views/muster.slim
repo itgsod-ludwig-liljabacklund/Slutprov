@@ -1,20 +1,25 @@
-table#muster.display
-  thead
-    tr
-      th Namn
-      th Tillverkare
-      th Volym
-      th År
-      th Betyg
-      th Pris
-      th Kr/Cl
-  tbody
-    - for must in @muster
+#container
+  table#muster.display
+    thead
       tr
-        td #{must.name}
-        td #{must.manufacturer}
-        td #{must.volume}
-        td #{must.year}
-        td 5
-        td #{must.price}
-        td #{(must.price.to_f / must.volume.to_f).round(2)}
+        th Namn
+        th Tillverkare
+        th Volym
+        th År
+        th Betyg
+        th Pris
+        th Kr/Cl
+    tbody
+      - for must in @muster
+        tr
+          td
+            a href="/must/#{must.id}" #{must.name}
+          td #{must.manufacturer}
+          td #{must.volume}
+          td #{must.year}
+          - if Recension.first(must: must)
+            td #{((Recension.all(must: must)).avg(:rating)).round(2)}
+          - else
+            td Inget betyg
+          td #{must.price}:-
+          td #{(must.price.to_f / must.volume.to_f).round(2)}:-
