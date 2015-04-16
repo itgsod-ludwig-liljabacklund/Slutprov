@@ -1,3 +1,29 @@
+body {
+    width: 100%;
+    height: 100%;
+}
+
+#container {
+    width: 80%;
+    padding-left: 20%;
+}
+
+#bottom_container {
+    border-color: red;
+    padding-top: 20%;
+    margin-left: -10%;
+    float: left;
+    width: 50%;
+}
+
+#reviews {
+    float: left;
+}
+
+#shops {
+    float:right;
+}
+
 .navbar-brand-centered {
     position: absolute;
     left: 50%;
@@ -14,4 +40,19 @@
 
 #brand {
     color: inherit;
+}
+
+#must_image {
+    float: left;
+    width: 20%;
+}
+
+#recension {
+    float: left;
+    display: inline-block;
+}
+
+#star {
+    padding-top: 2%;
+    float: right;
 }
