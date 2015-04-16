@@ -2,16 +2,25 @@
   img id='must_image' src='#{@must.img}'
   h1 #{@must.name}
   h3 #{@must.manufacturer}
+  p id='year_and_volume' #{@must.volume}cl - #{@must.year}
 #bottom_container
   #reviews
-    h3 Recensioner
-    - for recension in @must.get_reviews
-      p id='recension' #{recension.name} - #{recension.content}
-      - (5 - recension.rating).times do
-        span id='star' class="glyphicon glyphicon-star-empty"
-      - (recension.rating).times do
-        span id='star' class="glyphicon glyphicon-star"
-      br
+    h3 id='betyg' Betyg - #{@must.average_rating}
+    /h3 id='big_star' class="glyphicon glyphicon-star"
+    br
+    button id='toggle_review' type='button' onclick="toggleReview();" Bedöm
+    br
+    - if @must.get_reviews == []
+      p Inga recensioner än.
+    - else
+      - for recension in @must.get_reviews
+        p id='recension' #{recension.name} - #{recension.content}
+        - (5 - recension.rating).times do
+          span id='star' class="glyphicon glyphicon-star-empty"
+        - (recension.rating).times do
+          span id='star' class="glyphicon glyphicon-star"
+        br
   #shops
     h3 Affärer
-    p Ica
+    - for store in AffarMust.all(must: @must)
+      p #{store.affarsnamn} - #{store.price}:-
