@@ -56,3 +56,20 @@ body {
     padding-top: 2%;
     float: right;
 }
+
+#big_star {
+    padding-top: 1%;
+    float: right;
+}
+
+#year_and_volume {
+    font-size: 1.5em;
+}
+
+#betyg {
+    display: inline-block;
+}
+
+#toggle_review {
+    margin-left: 35%;
+}
