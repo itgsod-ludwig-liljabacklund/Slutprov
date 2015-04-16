@@ -5,8 +5,28 @@ html
     meta content="IE=edge" http-equiv="X-UA-Compatible" /
     meta content="width=device-width, initial-scale=1" name="viewport" /
     link href="/css/bootstrap.min.css" rel="stylesheet"
+    link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.6/css/jquery.dataTables.css"
     link href="/css/itsamust.css" rel="stylesheet"
   body
+    nav.navbar.navbar-default role="navigation"
+      .container
+        .navbar-header
+          button.navbar-toggle data-target="#navbar-brand-centered" data-toggle="collapse" type="button"
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          .navbar-brand.navbar-brand-centered
+            a id="brand" href="/" It's a must
+        #navbar-brand-centered.collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li
+              a href="/muster"  Se muster
+          ul.nav.navbar-nav.navbar-right
+            li
+              a href="/muster"  Search
     == yield
     script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"
     script type='text/javascript' src='/js/bootstrap.min.js'
+    script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.6/js/jquery.dataTables.js"
+    script src="../js/datatable.js"
