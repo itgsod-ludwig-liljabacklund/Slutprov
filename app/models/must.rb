@@ -8,6 +8,7 @@ class Must
   property :manufacturer, String, :required => true
   property :year, Integer, :required => true
   property :img, Text
+  property :container, String, :required => true
 
   has n, :recension
   has n, :affar, :through => :affarmusts

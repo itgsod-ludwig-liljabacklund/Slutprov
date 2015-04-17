@@ -8,11 +8,11 @@ class Seeder
   end
 
   def self.must
-    Must.create(name: 'Julmust', volume: 33, price: 12, manufacturer: 'Zeunerts', year: 2015, img: '/img/must.png')
-    Must.create(name: 'Påskmust', volume: 50, price: 18, manufacturer: 'Apotekarnes', year: 2014, img: '/img/must.png')
-    Must.create(name: 'Fulmust', volume: 50, price: 16, manufacturer: 'Stockmos', year: 2013, img: '/img/must.png')
-    Must.create(name: 'Kraftmust', volume: 100, price: 25, manufacturer: 'Bjärnes', year: 2012, img: '/img/must.png')
-    Must.create(name: 'Stelmust', volume: 33, price: 10, manufacturer: 'Apotekarnes', year: 2011, img: '/img/must.png')
+    Must.create(name: 'Julmust', volume: 33, price: 12, manufacturer: 'Zeunerts', year: 2015, img: '/img/must.png', container: 'Glas')
+    Must.create(name: 'Påskmust', volume: 50, price: 18, manufacturer: 'Apotekarnes', year: 2014, img: '/img/must.png', container: 'Burk')
+    Must.create(name: 'Fulmust', volume: 50, price: 16, manufacturer: 'Stockmos', year: 2013, img: '/img/must.png', container: 'Burk')
+    Must.create(name: 'Kraftmust', volume: 100, price: 25, manufacturer: 'Bjärnes', year: 2012, img: '/img/must.png', container: 'Glas')
+    Must.create(name: 'Stelmust', volume: 33, price: 10, manufacturer: 'Apotekarnes', year: 2011, img: '/img/must.png', container: 'Glas')
   end
 
   def self.recensioner
