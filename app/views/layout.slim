@@ -24,9 +24,10 @@ html
               a href="/muster"  Se muster
           ul.nav.navbar-nav.navbar-right
             li
-              a href="/muster"  Search
+              form action='/search' method='post'
+                input type='text' placeholder='Search' name='search_content'
     == yield
     script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"
     script type='text/javascript' src='/js/bootstrap.min.js'
     script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.6/js/jquery.dataTables.js"
-    script src="../js/datatable.js"
+    script type="text/javascript" src="/js/datatable.js"
