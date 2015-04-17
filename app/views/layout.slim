@@ -22,10 +22,12 @@ html
           ul.nav.navbar-nav
             li
               a href="/muster"  Se muster
+            li
+              a href="/" Populära muster
           ul.nav.navbar-nav.navbar-right
             li
               form action='/search' method='post'
-                input type='text' placeholder='Search' name='search_content'
+                input type='text' placeholder='Sök' name='search_content' id='search_box'
     == yield
     script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"
     script type='text/javascript' src='/js/bootstrap.min.js'
