@@ -1,9 +1,12 @@
 class App < Sinatra::Base
   require 'pp'
+  require "erb"
+  include ERB::Util
   enable :sessions
 
   get '/' do
-    @popmuster = Must.all
+
+    @muster = Must.all
     slim :index
   end
 
@@ -24,6 +27,10 @@ class App < Sinatra::Base
     else
       redirect back
     end
+  end
+
+  post '/search' do
+    redirect "/muster?#{url_encode(params['search_content'])}"
   end
 
 end
