@@ -103,6 +103,9 @@ body {
     text-align: center;
 }
 
+#search_box {
+    margin-top: 10%;
+}
 /*#submitreview {*/
     /*margin-left: 35%;*/
 /*}*/
