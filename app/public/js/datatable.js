@@ -8,12 +8,17 @@ $(document).ready( function () {
         "searching": false,
         "info": false,
         "paging": false,
-        "ordering": false
+        "ordering": false,
+        "bLengthChange": false,
+        "iDisplayLength": 50
     });
     $('#muster').DataTable({
         "language": {
             "emptyTable": "Inga muster."
-        }
+        },
+        "info": false,
+        "bLengthChange": false,
+        "iDisplayLength": 50
     });
     $('#muster').dataTable().fnFilter(decodeURIComponent(search));
 } );
