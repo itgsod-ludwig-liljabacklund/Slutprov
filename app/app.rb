@@ -1,5 +1,4 @@
 class App < Sinatra::Base
-  require 'pp'
   require "erb"
   include ERB::Util
   enable :sessions
