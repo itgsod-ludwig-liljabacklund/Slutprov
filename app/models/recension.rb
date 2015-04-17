@@ -7,4 +7,11 @@ class Recension
   property :rating, Integer, :required => true
 
   belongs_to :must
+
+  def self.post(params)
+    Recension.create(name: params['name'],
+                     content: params['reviewcontent'],
+                     rating: params['rating'],
+                     must_id: params['id'])
+  end
 end
