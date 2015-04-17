@@ -21,9 +21,9 @@
           option value='1' 5 ★
         /span id='ratingstar' class="glyphicon glyphicon-star"
       #form-group
-        input type='text' name='name' id='name' placeholder='Namn'
+        input type='text' name='name' id='name' placeholder='Namn' maxlength="12" required=""
       #form-group
-        input type='text' name='reviewcontent' id='reviewcontent' placeholder='Recension'
+        input type='text' name='reviewcontent' id='reviewcontent' placeholder='Recension' maxlength="20" required=""
         input type='hidden' name='id' value='#{@must.id}'
       #form-group
         input type='submit' name='submitreview' id='submitreview'
@@ -32,12 +32,17 @@
       p Inga recensioner än.
     - else
       - for recension in @must.get_reviews
-        p id='recension' #{recension.name} - #{recension.content}
-        - (5 - recension.rating).times do
-          span id='star' class="glyphicon glyphicon-star-empty"
-        - (recension.rating).times do
-          span id='star' class="glyphicon glyphicon-star"
-        br
+        table
+          tr
+            td
+              p id='recension' #{recension.name} - #{recension.content}
+            td
+            - (5 - recension.rating).times do
+              span id='star' class="glyphicon glyphicon-star-empty"
+            td
+            - (recension.rating).times do
+              span id='star' class="glyphicon glyphicon-star"
+      br
   #shops
     h3 Affärer
     - for store in AffarMust.all(must: @must)
