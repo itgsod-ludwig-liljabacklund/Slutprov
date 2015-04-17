@@ -8,6 +8,11 @@ body {
     padding-left: 20%;
 }
 
+#indexcontainer {
+    width: 70%;
+    padding-left: 30%;
+}
+
 #bottom_container {
     border-color: red;
     padding-top: 20%;
@@ -92,6 +97,10 @@ body {
     display: inline-block;
     line-height: 10px;
     /*padding-right: 5%;*/
+}
+
+.centertext {
+    text-align: center;
 }
 
 /*#submitreview {*/
