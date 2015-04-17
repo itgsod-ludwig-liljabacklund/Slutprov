@@ -17,4 +17,13 @@ class App < Sinatra::Base
     slim :must
   end
 
+  post '/submitreview' do
+    if params
+      Recension.post(params)
+      redirect back
+    else
+      redirect back
+    end
+  end
+
 end
