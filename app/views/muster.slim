@@ -5,6 +5,7 @@
       tr
         th Namn
         th Tillverkare
+        th Behållare
         th Volym
         th År
         th Betyg
@@ -16,6 +17,7 @@
           td
             a href="/must/#{must.id}" #{must.name}
           td #{must.manufacturer}
+          td #{must.container}
           td #{must.volume} cl
           td #{must.year}
           - if Recension.first(must: must)
