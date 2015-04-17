@@ -1,4 +1,19 @@
-h1 TEST
-h2 TEST
-p TEST
-a TEST
+#indexcontainer
+  h2 class='centertext' Populära muster
+  table#popular_muster.display
+    thead
+      tr
+        th Namn
+        th Tillverkare
+        th Betyg
+    tbody
+      - for must in @muster
+        - if must.average_rating >= 4
+          tr
+            td
+              a href="/must/#{must.id}" #{must.name}
+            td #{must.manufacturer}
+            - if Recension.first(must: must)
+              td #{must.average_rating}
+            - else
+              td Inget betyg
