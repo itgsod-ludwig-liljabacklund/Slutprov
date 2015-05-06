@@ -1,0 +1,12 @@
+#container
+  h3 class='centertext' Please sign in
+  #centerdiv
+    form action='/sign_in' method='post'
+      input type='email' placeholder='Email' name='email' id='email_box'
+      br
+      input type='password' placeholder='Password' name='password' id='password_box'
+      br
+      input type="submit" value="Sign in"
+    br
+    p Not a user?
+    a href='/sign_up' Sign up
