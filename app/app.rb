@@ -4,7 +4,6 @@ class App < Sinatra::Base
   enable :sessions
 
   get '/' do
-
     @muster = Must.all
     slim :index
   end
@@ -19,9 +18,9 @@ class App < Sinatra::Base
     slim :must
   end
 
-  post '/submitreview' do
+  post '/submitreview/:id' do |id|
     if params
-      Recension.post(params)
+      Recension.post(params, id, self)
       redirect back
     else
       redirect back
@@ -30,6 +29,30 @@ class App < Sinatra::Base
 
   post '/search' do
     redirect "/muster?#{url_encode(params['search_content'])}"
+  end
+
+  get '/sign_in' do
+    redirect back if session[:logged_in]
+    slim :sign_in
+  end
+
+  post '/sign_in' do
+    redirect_url = User.login(params, self)
+    redirect redirect_url ||= back
+  end
+
+  get '/sign_up' do
+    slim :sign_up
+  end
+
+  post '/sign_up' do
+    redirect_url = User.create(params)
+    redirect redirect_url ||= back
+  end
+
+  get '/sign_out' do
+    User.logout(self)
+    redirect back
   end
 
 end
