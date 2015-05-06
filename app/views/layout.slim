@@ -28,6 +28,13 @@ html
             li
               form action='/search' method='post'
                 input type='text' placeholder='Sök' name='search_content' id='search_box'
+            - if session[:logged_in]
+              li
+                a href="/sign_out" Sign out
+            - else
+              li
+                a href="/sign_in" Sign in
+
     == yield
     script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"
     script type='text/javascript' src='/js/bootstrap.min.js'
