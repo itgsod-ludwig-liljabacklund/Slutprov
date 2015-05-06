@@ -8,25 +8,23 @@
     h3 id='betyg' Betyg - #{@must.average_rating}
     /h3 id='big_star' class="glyphicon glyphicon-star"
     br
-    button id='toggle_review' type='button' onclick="toggleReview();" Bedöm
-    form action='/submitreview' method='post' id='reviewform' class='form-horizontal'
-      #form-group
-        label for="rating" class="col-sm-2 control-label" id='ratingtext' Betyg
-        /span id='ratingtext' Betyg
-        select name='rating' id='rating'
-          option value='1' 1 ★
-          option value='2' 2 ★
-          option value='3' 3 ★
-          option value='4' 4 ★
-          option value='5' 5 ★
-        /span id='ratingstar' class="glyphicon glyphicon-star"
-      #form-group
-        input type='text' name='name' id='name' placeholder='Namn' maxlength="12" required=""
-      #form-group
-        input type='text' name='reviewcontent' id='reviewcontent' placeholder='Recension' maxlength="20" required=""
-        input type='hidden' name='id' value='#{@must.id}'
-      #form-group
-        input type='submit' name='submitreview' id='submitreview'
+    - if session[:logged_in]
+      button id='toggle_review' type='button' onclick="toggleReview();" Bedöm
+      form action='/submitreview/#{@must.id}' method='post' id='reviewform' class='form-horizontal'
+        #form-group
+          label for="rating" class="col-sm-2 control-label" id='ratingtext' Betyg
+          /span id='ratingtext' Betyg
+          select name='rating' id='rating'
+            option value='1' 1 ★
+            option value='2' 2 ★
+            option value='3' 3 ★
+            option value='4' 4 ★
+            option value='5' 5 ★
+          /span id='ratingstar' class="glyphicon glyphicon-star"
+        #form-group
+          input type='text' name='reviewcontent' id='reviewcontent' placeholder='Recension' maxlength="20" required=""
+        #form-group
+          input type='submit' name='submitreview' id='submitreview'
     br
     - if @must.get_reviews == []
       p Inga recensioner än.
