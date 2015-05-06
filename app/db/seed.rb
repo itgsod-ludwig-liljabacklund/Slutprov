@@ -28,6 +28,7 @@ class Seeder
     Recension.create(name: 'Lena', user_id: 2, content: 'Mycket god', rating: 5, must_id: 1)
     Recension.create(name: 'Orvar', user_id: 3, content: 'Nä nu jävlar', rating: 1, must_id: 1)
     Recension.create(name: 'Mats', user_id: 4, content: 'Besviken', rating: 2, must_id: 1)
+    Recension.create(name: 'Lena', user_id: 2, content: 'Top shit m8', rating: 5, must_id: 2)
   end
 
   def self.affarer
