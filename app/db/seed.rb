@@ -1,10 +1,19 @@
 class Seeder
+  include BCrypt
 
   def self.seed!
+    self.users
     self.must
     self.recensioner
     self.affarer
     self.affarmusts
+  end
+
+  def self.users
+    User.create(name: 'test', email: 'test@test.com', password_hash: Password.create('test'))
+    User.create(name: 'Lena', email: 'lena@test.com', password_hash: Password.create("lena"))
+    User.create(name: 'Orvar', email: 'orvar@test.com', password_hash: Password.create("orvar"))
+    User.create(name: 'Mats', email: 'mats@test.com', password_hash: Password.create("mats"))
   end
 
   def self.must
@@ -16,9 +25,9 @@ class Seeder
   end
 
   def self.recensioner
-    Recension.create(name: 'Lisa', content: 'Mycket god', rating: 5, must_id: 1)
-    Recension.create(name: 'Sten', content: 'Nä nu jävlar', rating: 1, must_id: 1)
-    Recension.create(name: 'Olle', content: 'Besviken', rating: 2, must_id: 1)
+    Recension.create(name: 'Lena', user_id: 2, content: 'Mycket god', rating: 5, must_id: 1)
+    Recension.create(name: 'Orvar', user_id: 3, content: 'Nä nu jävlar', rating: 1, must_id: 1)
+    Recension.create(name: 'Mats', user_id: 4, content: 'Besviken', rating: 2, must_id: 1)
   end
 
   def self.affarer
