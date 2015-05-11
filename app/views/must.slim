@@ -24,7 +24,7 @@
         #form-group
           input type='text' name='reviewcontent' id='reviewcontent' placeholder='Recension' maxlength="20" required=""
         #form-group
-          input type='submit' name='submitreview' id='submitreview'
+          button type='submit' name='submitreview' id='submitreview' Submit
     br
     - if @must.get_reviews == []
       p Inga recensioner än.
