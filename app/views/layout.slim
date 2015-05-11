@@ -26,14 +26,16 @@ html
               a href="/" Populära muster
           ul.nav.navbar-nav.navbar-right
             li
-              form action='/search' method='post'
+              form id='search_form' action='/search' method='post'
                 input type='text' placeholder='Sök' name='search_content' id='search_box'
             - if session[:logged_in]
+              li
+                p id='welcome' Welcome #{session[:name]}
               li
                 a href="/sign_out" Sign out
             - else
               li
-                a href="/sign_in" Sign in
+                a id='sign_in' href="/sign_in" Sign in
 
     == yield
     script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"
