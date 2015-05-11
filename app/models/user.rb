@@ -16,6 +16,7 @@ class User
     @user = User.create(name: params[:name].capitalize!, email: params[:email], password_hash: params[:password])
     if @user.save
       @user.give_token(app)
+      return '/'
     else
       return '/sign_up'
     end
