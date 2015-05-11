@@ -1,42 +1,38 @@
+require 'dm-validations'
+
 class User
   include DataMapper::Resource
   include BCrypt
 
   property :id, Serial
   property :name, String, :required => true
-  property :email, String, :required => true
+  property :email, String, :required => true, :unique => true,
+           :format   => :email_address
   property :password_hash, BCryptHash, :required => true
 
-  def password
-    @password ||= Password.new(password_hash)
-  end
+  validates_length_of :name, :within => 1..14
 
-  def password=(new_password)
-    @password = Password.create(new_password)
-    self.password_hash = @password
-  end
-
-  def self.create(params)
-    @user = User.new(name: params[:name])
-    @user.email = params[:email]
-    @user.password = params[:password]
-    @user.save!
-    return '/'
+  def self.build(params, app)
+    @user = User.create(name: params[:name].capitalize!, email: params[:email], password_hash: params[:password])
+    if @user.save
+      @user.give_token(app)
+    else
+      return '/sign_up'
+    end
   end
 
   def self.login(params, app)
     @user = User.find_by_email(params[:email])
-    if @user.password == params[:password]
-      p "hej"
+    if @user && @user.password_hash == params[:password]
       @user.give_token(app)
       return '/'
     else
-      p "nej"
-      return '/'
+      return '/sign_in'
     end
   end
 
   def give_token(app)
+    app.session[:name] = self.name
     app.session[:logged_in] = true
     app.session[:email] = self.email
   end
