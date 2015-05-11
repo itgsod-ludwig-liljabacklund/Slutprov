@@ -10,7 +10,7 @@ class Seeder
   end
 
   def self.users
-    User.create(name: 'test', email: 'test@test.com', password_hash: Password.create('test'))
+    User.create(name: 'test', email: 'test@test.com', password_hash: Password.create("test"))
     User.create(name: 'Lena', email: 'lena@test.com', password_hash: Password.create("lena"))
     User.create(name: 'Orvar', email: 'orvar@test.com', password_hash: Password.create("orvar"))
     User.create(name: 'Mats', email: 'mats@test.com', password_hash: Password.create("mats"))
