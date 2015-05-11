@@ -10,10 +10,9 @@ describe('signing up', :type => :feature) do
   end
 
   it 'displays all the necessary information' do
-    expect(page).to have_content 'name_box'
-    expect(page).to have_content 'email_box'
-    expect(page).to have_content 'password_box'
-    expect(page).to have_content 'Sign up'
+    find_field('name_box')
+    find_field('email_box')
+    find_field('password_box')
   end
 
   it 'creates a user correctly and redirects to popular muster' do
@@ -27,7 +26,7 @@ describe('signing up', :type => :feature) do
 
   it 'doesnt create a user with incorrect sign up details' do
     click_button 'Sign up'
-    expect(page).to have_content 'Sign up'
+    expect(page).to have_content 'Please sign up'
   end
 
 end
