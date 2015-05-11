@@ -46,7 +46,7 @@ class App < Sinatra::Base
   end
 
   post '/sign_up' do
-    redirect_url = User.create(params)
+    redirect_url = User.build(params, self)
     redirect redirect_url ||= back
   end
 
